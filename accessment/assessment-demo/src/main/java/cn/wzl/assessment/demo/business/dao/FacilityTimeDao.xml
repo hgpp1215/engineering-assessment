@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wzl.assessment.demo.business.dao.FacilityTimeDao">
+    <insert id="batchInsert">
+        insert into facility_time
+        (location_id,week_day,open_time,close_time,create_time,update_time,create_by,update_by)
+        values
+        <foreach collection="saveList" item="i" separator=",">
+            (#{i.locationId},#{i.weekDay},#{i.openTime},#{i.closeTime},#{i.createTime},#{i.updateTime},#{i.createBy},#{i.updateBy})
+        </foreach>
+    </insert>
+</mapper>

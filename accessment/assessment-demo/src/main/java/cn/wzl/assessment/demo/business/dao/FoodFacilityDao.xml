@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wzl.assessment.demo.business.dao.FoodFacilityDao">
+    <insert id="batchInsert">
+        insert into food_facility
+        (location_id,applicant,facility_type,cnn,location_description,address,block_lot,block,lot,permit,status,food_items,location_x,location_y,latitude,longitude,schedule,dayshours,noi_sent,approved_date,received,expiration_date,prior_permit,location,fire_prevention_districts,police_districts,supervisor_districts,zip_codes,neighborhoods,create_time,update_time,create_by,update_by)
+        values
+        <foreach collection="saveList" item="i" separator=",">
+            (#{i.locationId},#{i.applicant},#{i.facilityType},#{i.cnn},#{i.locationDescription},#{i.address},#{i.blockLot},#{i.block},#{i.lot},#{i.permit},#{i.status},#{i.foodItems},#{i.locationX},#{i.locationY},#{i.latitude},#{i.longitude},#{i.schedule},#{i.dayshours},#{i.noiSent},#{i.approvedDate},#{i.received},#{i.expirationDate},#{i.priorPermit},#{i.location},#{i.firePreventionDistricts},#{i.policeDistricts},#{i.supervisorDistricts},#{i.zipCodes},#{i.neighborhoods},#{i.createTime},#{i.updateTime},#{i.createBy},#{i.updateBy})
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,19 @@
+server:
+  port: 20243
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: assessment-demo
+  datasource:
+    # JDBC \u914D\u7F6E
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.101:3306/assessment_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8&rewriteBatchedStatements=true
+    username: root
+    password: root
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: cn.wzl.assessment.demo.pojo
+  mapper-locations: classpath:cn/wzl/assessment/demo/business/dao/*Dao.xml

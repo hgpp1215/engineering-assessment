@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "2aad8ff3-f706-447c-a98a-d91750beb824",
+		"name": "asscessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11674974"
+	},
+	"item": [
+		{
+			"name": "import",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:20243/api/data/import",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "20243",
+					"path": [
+						"api",
+						"data",
+						"import"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find available facility",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:20243/api/facility/available",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "20243",
+					"path": [
+						"api",
+						"facility",
+						"available"
+					],
+					"query": [
+						{
+							"key": "locationId",
+							"value": "111",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
